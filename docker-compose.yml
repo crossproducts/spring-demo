@@ -1,0 +1,25 @@
+version: "3.9"
+services:
+  java-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command:
+      - /bin/bash
+      - -c
+      - |
+        mvn clean install
+        mvn spring-boot:run
+        while true; do sleep 1000; done
+    ports:
+      - "8080:8080"  # Map the container port to the host
+    volumes:
+      - ./demo:/demo
+      - ./.m2:/root/.m2
+      # - ./logs:/app/logs  # Example of a volume for logs
+    environment:
+      - JAVA_OPTS=-Xmx512m
+      - SECURITY_ENABLED=false
+    # restart: always
+
+# http://localhost:8080/swagger-ui.html
