@@ -18,3 +18,4 @@ https://bohutskyi.com/security-mtls-in-spring-boot-aef44316dd4b
 # Documentation-as-code
 https://github.com/squidfunk/mkdocs-material
 https://mkdocs-mermaid2.readthedocs.io/en/latest/
+https://github.com/mermaid-js/mermaid-live-editor
